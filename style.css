@@ -1,0 +1,103 @@
+/*   background-color: var(--white); */
+:root {
+    --global-background : rgb(41, 41, 41);
+
+    --primary-button-accent : rgb(51, 201, 51);
+
+    --secondary-button-accent : rgb(211, 81, 81);
+
+    --global-elem-margin : 20px;
+    
+  }
+
+* {
+    margin : 0;
+    padding  : 0;
+    background :var(--global-background);
+    font-family: 'Poppins';
+    /* box-sizing: border-box; */
+    color : white;
+
+}
+
+.cl{background-color: rgb(252, 34, 34);}
+.min{background-color: rgb(42, 255, 42);}
+.wd{background-color: rgb(12, 12, 255);}
+
+
+.landing-flex-container {
+    display : flex;
+    height : 100vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-grid-container{
+    display : grid;
+    width : 100%;
+    /* for resp : change to rows */
+    grid-template-columns:  1fr 3fr ;
+    place-items: center;
+    /* grid layout completes */
+    
+}
+/* ide window part */
+.ide-container{
+    height : 300px;
+    width : 500px;
+    background : rgb(54, 54, 71);
+    /* border: 1px solid white; */
+    border-radius: 5px;
+    position : relative
+}
+.quick-access {
+    width : 100%;
+    height : 15%;
+    /* position : sticky; */
+    /* top : 0; */
+    background : black;
+    display : flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* flex-direction: column;  */
+   
+}
+
+.dot{
+    border-radius: 50%;
+    width : 15px;       
+    height : 15px;
+    margin-left: 4px;
+    
+}
+/* inner ide for sidebar and playground */
+.ide-sidebar-warzone-flex{
+    /* display : grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 10px; */
+    display : flex;
+    flex-direction: row;
+justify-content: center;
+    align-items: center;
+    height : 100%;
+
+}
+.sidebar{
+    background-color: rgb(32, 32, 60);
+    height : 100%;
+    width : 25%;
+    /* border : 1px solid white; */
+    text-align: center;
+    
+
+}
+
+.warzone { 
+    background-color: rgb(32, 32, 60);
+    height : 100%;
+    width : 75%;
+    /* border : 1px solid white; */
+    text-align: center;
+}
