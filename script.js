@@ -19,9 +19,75 @@ const projectBtn = document.querySelector('.projects');
 const contactsContainer = document.querySelector('.contacts-page-container');
 const contactBtn = document.querySelector('.contact');
 
+const typewriter = document.querySelector('.typewriter')
+const ide_tab_1 = document.querySelector('.btn1')
+const ide_tab_2 = document.querySelector('.btn2')
+const ide_tab_3 = document.querySelector('.btn3')
+
+const html_dummy = document.querySelector('.html_dummy')
+const javascript_dummy = document.querySelector('.javascript_dummy')
+const python_dummy = document.querySelector('.python_dummy')
+
+// Ide settings
+// Ide settings
+// Ide settings
+
+// function 
+
+// html_dummy.addEventListener
+let tabs_hide_show = function(dummy_class){
+    dummy_class.classList.toggle('tabs_hidden')
+    this.style.pointerEvents ='none';
+    this.classList.add('tabs_active');
+
+}
+ide_tab_1.style.pointerEvents = 'none'
+ide_tab_1.classList.add('tabs_active');
+
+ide_tab_1.addEventListener('click',function(){
+    ide_tab_2.classList.remove('tabs_active');
+    ide_tab_1.classList.add('tabs_active');
+    ide_tab_3.classList.remove('tabs_active');
+    html_dummy.classList.toggle('tabs_hidden')
+    javascript_dummy.classList.add('tabs_hidden')
+    python_dummy.classList.add('tabs_hidden')
+    ide_tab_2.style.pointerEvents = 'all'
+    ide_tab_1.style.pointerEvents = 'none'
+    ide_tab_3.style.pointerEvents = 'all'
+ 
+   
+})
+ide_tab_2.addEventListener('click',function(){
+    ide_tab_2.classList.add('tabs_active');
+    ide_tab_1.classList.remove('tabs_active');
+    ide_tab_3.classList.remove('tabs_active');
+    javascript_dummy.classList.toggle('tabs_hidden')
+    html_dummy.classList.add('tabs_hidden')
+    python_dummy.classList.add('tabs_hidden')
+    ide_tab_1.style.pointerEvents = 'all'
+    ide_tab_2.style.pointerEvents = 'none'
+  ide_tab_3.style.pointerEvents = 'all'
+
+})
+ide_tab_3.addEventListener('click',function(){
+    ide_tab_2.classList.remove('tabs_active');
+    ide_tab_1.classList.remove('tabs_active');
+    ide_tab_3.classList.add('tabs_active');
+    ide_tab_1.style.pointerEvents = 'all'
+    ide_tab_2.style.pointerEvents = 'all'
+    ide_tab_3.style.pointerEvents = 'none'
+    html_dummy.classList.add('tabs_hidden')
+    javascript_dummy.classList.add('tabs_hidden')
+    python_dummy.classList.toggle('tabs_hidden')
+   
+})
+
 // aboutme page
 // aboutme page
 // aboutme page
+
+
+
 
 
 aboutMeBtn.addEventListener('click',function(){
