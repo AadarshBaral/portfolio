@@ -458,12 +458,14 @@ body {
 /* About me  */
 /* About me  */
 /* About me  */
+/*About page styles start here*/
 .about-me-container {
     display: flex;
     justify-content: center;
     height: 100vh;
     align-items: center;
 }
+
 
 
 
@@ -538,3 +540,4 @@ body {
     height: 100vh;
     align-items: center;
 }
+
