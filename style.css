@@ -197,6 +197,27 @@ body {
     border-radius: 10px;
     border : none;
     cursor: pointer;
+    font-size: 16px;
+}
+.btn-special {
+    
+    color : white;
+    margin-right: 10px;
+    text-decoration: none;
+    background-color: transparent;
+    border : 2px solid var(--primary-button-accent);
+    padding: 8px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    font-size: 15px;
+   
+}
+.special-btn-position {
+    position: absolute;
+    bottom : 10px;
+    left : 20px;
+
 }
 
 
@@ -705,13 +726,13 @@ body {
 overflow: auto;
 } */
 .my-info {
-
+    position: relative;
     background: rgb(32, 32, 36);
     height: 80%;
     width: 721px;
     /* text-align: center; */
     border-radius: 10px;
-    /* overflow-y: auto; */
+    overflow-y: auto;
 }
 .about-header-text {
     text-align: left;
@@ -1053,7 +1074,7 @@ height: 100%;
 }
 
 .img-cont {
-    width: 80%;
+    width: 100%;
     /* margin-bottom: 100px; */
 }
 .img-cont img{
@@ -1159,7 +1180,7 @@ height: 100%;
     }
     .my-info {
         width : auto;
-        height : auto;
+        /* height : auto; */
     }
     .my-stacks{
         width : 90%;
@@ -1224,7 +1245,7 @@ height: 100%;
     }
     
     .about-me-container{
-        padding-top : 150px;
+        padding-top : 60px;
     }
 }
 @media (max-width : 500px) {
@@ -1263,7 +1284,10 @@ height: 100%;
         margin-top: 40px;
     }
     .contact-me {
-        height : 60vh;
+        height : 90vh;
+    }
+    .landing-grid-container{
+        height : 90vh
     }
 }
 
