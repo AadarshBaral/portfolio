@@ -101,6 +101,7 @@ projectBtn.addEventListener("click", function () {
   projectsContainer.classList.remove("hidden");
   homePage.classList.add("hidden");
   localStorage.setItem("page", "project");
+  contactsContainer.classList.add("hidden")
 });
 
 //Contact Page
@@ -150,7 +151,32 @@ sessionStorage.setItem("is_reloaded", true);
 // page reload check ends here
 
 aboutMeBtn.addEventListener("click", function () {
+ 
   homePage.classList.add("hidden");
+  contactsContainer.classList.add('hidden')
   localStorage.setItem("page", "about");
+  projectsContainer.classList.add('hidden')
   abouMeContainer.classList.remove("hidden");
 });
+document.getElementsByTagName('body')[0].style.overflow = "auto";
+// abouMeContainer.style.overflowY = 'hidden'
+
+
+// let aboutHeader = document.querySelector('.about-header-text')
+// console.log(typeof aboutHeader.textContent)
+// let tex = aboutHeader.textContent
+
+
+// for ( let i= 0 ; i <= tex.length-1 ; i++){
+
+//   i.addEventListener('click',()=>console.log('ok'))
+// }
+// aboutHeader.forEach(element => {
+//   element.addEventListener('hover',function(e){
+//     console.log('kk')
+//   })
+// });
+const hiddenInfo = document.querySelector('.hidden-info')
+const infoButton = document.querySelector('.info-button')
+
+infoButton.addEventListener('click',()=> hiddenInfo.classList.toggle('hidden'))

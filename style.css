@@ -67,6 +67,7 @@ body {
     position: absolute;
     left: 10px;
     top: 20px;
+    height: 60px;
     display: none;
 
 
@@ -109,6 +110,27 @@ body {
 .tabs_active {
     background: rgb(35, 35, 64) !important;
 }
+@media (max-width : 1080px) {
+    .nav-items{
+        /* background : rgb(37, 37, 37); */
+        padding: 20px 0 20px 0;
+        top: 0;
+        position: static;
+        
+    }
+    .menu-bar {
+        padding-top : 20px;
+        /* background : rgb(37, 37, 37); */
+        top: 0;
+        padding :0;     
+    }
+    .nav-bar{
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background : rgb(53, 53, 53);
+    }
+}
 
 @media screen and (min-width:1080px) {
 
@@ -117,12 +139,12 @@ body {
         justify-items: center;
         align-items: center;
         height: 100px;
-    }
-
-    .nav-items {
         justify-content: flex-end;
         top: 10px;
+
     }
+
+
 }
 
 
@@ -149,8 +171,10 @@ body {
     background: var(--primary-button-accent);
     padding: 10px;
     border-radius: 10px;
+    border : none;
     cursor: pointer;
 }
+
 
 
 .landing-grid-container {
@@ -175,6 +199,7 @@ body {
     .menu-bar {
 
         display: inline-block;
+        z-index: 2;
 
     }
 }
@@ -474,6 +499,7 @@ body {
 
 }
 
+/*https://discord.com/channels/662267976984297473/976997476852719626/1005903423901810739*/
 /* headiing fix */
 .sub-heading {
     font-size: 20px
@@ -564,21 +590,33 @@ body {
     margin: auto;
     padding-top: 100px;
     padding: 100px 20px 0px 20px;
+    overflow-x: hidden;
     
 }
-.overflow-mob {
+/* .overflow-mob {
 overflow: auto;
-}
+} */
 .my-info {
 
     background: rgb(32, 32, 36);
     height: 80%;
     width: 721px;
-    text-align: center;
+    /* text-align: center; */
     border-radius: 10px;
-    overflow-y: auto;
+    /* overflow-y: auto; */
+}
+.about-header-text {
+    text-align: left;
+    padding: 20px;
+}
+.about-info {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
+.info-button{
+    margin : 20px;
+}
 .a-card {
     margin: 10px
 }
@@ -745,91 +783,6 @@ right : 0;
 
 }
 
-/* media queries */
-@media (max-width : 1080px){
-    .about-me-container{
-        flex-direction: column;
-        padding : 175px 0px 20px;
-    }
-    .my-info {
-        width : auto;
-        height : 100%;
-    }
-    .my-stacks{
-        width : 90%;
-        flex-direction: row;
-    }
-    .logos {
-        /* grid-template-columns: repeat(4 ,1fr); */
-        grid-gap: 10px;
-    }
-    .stack-container {
-        width : 100%;
-        height : 100%;
-    }
-    .logos li {
-        padding : 8px
-    }
-    
-}
-@media (max-width : 835px) {
-    .logos {
-        grid-template-columns: repeat(3 ,1fr);
-       
-    }
-    .my-info {
-        width : 95%;
-        height : 100%;
-    }
-    .my-stacks {
-        width : 95%;
-    }
-}
-@media (max-width : 635px){
-.my-stacks{
-    flex-direction: column;
-}
-.logos {
-    grid-template-columns: repeat(6 ,1fr);
-   
-}
-.stack-side-bar{
-    width : 50px
-}
-}
-@media (max-width : 520px){
-
-    /* .front{
-        height : 400px;
-    }
-    .back {
-        height : 400px
-    } */
-    .my-stacks{
-        display :block
-    }
-    
-    .about-me-container{
-        padding-top : 150px;
-    }
-}
-@media (max-width : 500px) {
-    .logos {
-        grid-template-columns: repeat(3 ,1fr);
-       
-    }
-    .about-me-container{
-        display : block;
-    }
-    .my-info {
-        height : 70%;
-    }
-    .logos img {
-        width : 60px;
-        height : 60px;
-    }
-}
-
 
 
 
@@ -926,22 +879,31 @@ height: 100%;
     grid-template-rows: 1fr 2fr;
     grid-gap: 20px;
     height: 50vh;
-    width: 67%;
+    /* width: 67%; */
 }
 
 .img {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     /* margin : 10px; */
+    height: 400px;
     align-items: center;
 }
 
 .img-cont {
     width: 80%;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
 }
-
+.img-cont img{
+    width : 180px;
+    height  : 180px;
+    border-radius: 50%;;
+}
+.social img{
+    width : 50px;
+    height : 50px;
+}
 .image-form {
     display: grid;
     /* align-items: center; */
@@ -980,9 +942,14 @@ height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 135px;
+    grid-gap: 20px;
 
 }
-
+.social li {
+    background : rgb(50, 50, 50);
+    border-radius: 20px;
+    padding: 10px;
+}
 .contact-social-links {}
 
 .form textarea {
@@ -1004,5 +971,109 @@ height: 100%;
     font-size: 20px;
     margin: 10px;
     border: none;
+}
+
+
+/* media queries */
+@media (max-width : 1080px){
+    .about-me-container{
+        flex-direction: column;
+        padding : 175px 0px 20px;   
+        height :120vh
+    }
+    .my-info {
+        width : auto;
+        height : auto;
+    }
+    .my-stacks{
+        width : 90%;
+        flex-direction: row;
+    }
+    .logos {
+        /* grid-template-columns: repeat(4 ,1fr); */
+        grid-gap: 10px;
+    }
+    .stack-container {
+        width : 100%;
+        height : 100%;
+    }
+    .logos li {
+        padding : 8px
+    }
+    
+}
+@media (max-width : 835px) {
+    .logos {
+        grid-template-columns: repeat(3 ,1fr);
+       
+    }
+    .my-info {
+        width : 95%;
+     
+    }
+    .my-stacks {
+        width : 95%;
+    }
+}
+@media (max-width : 635px){
+.my-stacks{
+    flex-direction: column;
+}
+.logos {
+    grid-template-columns: repeat(6 ,1fr);
+   
+}
+.stack-side-bar{
+    width : 50px
+
+}
+
+}
+@media (max-width : 520px){
+
+    /* .front{
+        height : 400px;
+    }
+    .back {
+        height : 400px
+    } */
+    .my-stacks{
+        display :block
+    }
+    
+    .about-me-container{
+        padding-top : 150px;
+    }
+}
+@media (max-width : 500px) {
+    .logos {
+        grid-template-columns: repeat(3 ,1fr);
+       
+    }
+    .about-me-container{
+        display : block;
+    }
+
+    .logos img {
+        width : 60px;
+        height : 60px;
+    }
+    .image-form{
+        display : flex;
+        flex-direction: column;
+    }
+    .img {
+        flex-direction: row;
+        height : 200px;
+        padding: 0 10px 0 10px
+    }
+    .img-cont img {
+        width : 150px;
+        height  : 150px;
+        margin-top: 40px;
+    }
+    .contact-me {
+        height : 60vh;
+    }
 }
 
