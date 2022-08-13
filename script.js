@@ -17,7 +17,7 @@ const contactsContainer = document.querySelector(".contacts-page-container");
 const projectBtn = document.querySelector(".projects");
 const contactBtn = document.querySelector(".contact");
 
-const typewriter = document.querySelector(".typewriter");
+// const typewriter = document.querySelector(".typewriter");
 const ide_tab_1 = document.querySelector(".btn1");
 const ide_tab_2 = document.querySelector(".btn2");
 const ide_tab_3 = document.querySelector(".btn3");
@@ -51,6 +51,7 @@ ide_tab_1.addEventListener("click", function () {
   ide_tab_2.style.pointerEvents = "all";
   ide_tab_1.style.pointerEvents = "none";
   ide_tab_3.style.pointerEvents = "all";
+
 });
 ide_tab_2.addEventListener("click", function () {
   ide_tab_2.classList.add("tabs_active");
@@ -62,6 +63,7 @@ ide_tab_2.addEventListener("click", function () {
   ide_tab_1.style.pointerEvents = "all";
   ide_tab_2.style.pointerEvents = "none";
   ide_tab_3.style.pointerEvents = "all";
+
 });
 ide_tab_3.addEventListener("click", function () {
   ide_tab_2.classList.remove("tabs_active");
@@ -73,6 +75,7 @@ ide_tab_3.addEventListener("click", function () {
   html_dummy.classList.add("tabs_hidden");
   javascript_dummy.classList.add("tabs_hidden");
   python_dummy.classList.toggle("tabs_hidden");
+ 
 });
 
 // aboutme page
@@ -83,6 +86,8 @@ ide_tab_3.addEventListener("click", function () {
 ///Home page
 ///Home page
 ///Home page
+
+
 
 homeBtn.addEventListener("click", function () {
   if (homePage.classList.contains("hidden")) {
@@ -117,6 +122,10 @@ contactBtn.addEventListener("click", function () {
 //Success of this thing was one of the most fun thing i have ever experienced during my learning phases of javascript
 if (!localStorage.getItem("page")) {
   localStorage.setItem("page", "home");
+
+  abouMeContainer.classList.add("hidden");
+  projectsContainer.classList.add("hidden");
+  contactsContainer.classList.add("hidden");
 }
 
 if (sessionStorage.getItem("is_reloaded")) {
@@ -180,3 +189,48 @@ const hiddenInfo = document.querySelector('.hidden-info')
 const infoButton = document.querySelector('.info-button')
 
 infoButton.addEventListener('click',()=> hiddenInfo.classList.toggle('hidden'))
+
+
+
+// set up text to print, each item in array is new line
+
+var aText = new Array(
+  "Welcome to my Portfolio"
+  );
+  var iSpeed = 100; // time delay of print out
+  var iIndex = 0; // start printing array at this posision
+  var iArrLength = aText[0].length; // the length of the text array
+  var iScrollAt = 20; // start scrolling up at this many lines
+   
+  var iTextPos = 0; // initialise text position
+  var sContents = ''; // initialise contents variable
+  var iRow; // initialise current row
+   
+  function typewriter()
+  {
+   sContents =  ' ';
+   iRow = Math.max(0, iIndex-iScrollAt);
+   var destinations = document.querySelectorAll("#typedtext");
+   destinations.forEach((destination)=> {
+    while ( iRow < iIndex ) {
+      sContents += aText[iRow++] + '<br />';
+     }
+     destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+     if ( iTextPos++ == iArrLength ) {
+      iTextPos = 0;
+      iIndex++;
+      if ( iIndex != aText.length ) {
+       iArrLength = aText[iIndex].length;
+       setTimeout("typewriter()", 500);
+      }
+     } else {
+      setTimeout("typewriter()", iSpeed);
+     }
+   })
+
+  }
+  
+  typewriter()
+
+  
+  

@@ -38,22 +38,17 @@
           <i style="font-size: 30px" class="fa-solid fa-xl fa-bars"></i>
         </div>
         <ul class="nav-items hidden">
-          <a href="#">
-            <!-- <span class="icon"><i class="fa-solid faicon fa-house"></i></span> -->
-            <span class="text home btn-primary">Home</span>
-          </a>
-          <a href="#">
-            <!-- <span class="icon"><i class="fa-solid faicon fa-house"></i></span> -->
-            <span class="text about btn-primary">About Me</span>
-          </a>
-          <a href="#">
-            <!-- <span class="icon"><i class="fa-solid faicon fa-house"></i></span> -->
-            <span class="text projects btn-primary">Projects</span>
-          </a>
-          <a href="#">
-            <!-- <span class="icon"><i class="fa-solid faicon fa-house"></i></span> -->
-            <span class="text contact btn-primary">Contact</span>
-          </a>
+          <!-- <span class="icon"><i class="fa-solid faicon fa-house"></i></span> -->
+          <span class="text home btn-primary">Home</span>
+
+          <!-- <span class="icon"><i class="fa-solid faicon fa-house"></i></span> -->
+          <span class="text about btn-primary">About Me</span>
+
+          <!-- <span class="icon"><i class="fa-solid faicon fa-house"></i></span> -->
+          <span class="text projects btn-primary">Projects</span>
+
+          <!-- <span class="icon"><i class="fa-solid faicon fa-house"></i></span> -->
+          <span class="text contact btn-primary">Contact</span>
         </ul>
       </div>
       <!-- Home container -->
@@ -123,13 +118,13 @@
               </div>
               <div class="warzone">
                 <div class="playground-tabs">
-                  <div class="tab">
+                  <!-- <div class="tab">
                     <i
                       class="fa-brands fa-ic-tab fa-html5"
                       style="color: orange"
                     ></i>
                     <p class="tab-name">tab1</p>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="playground">
                   <div class="numbering" style="line-height: 1.5">
@@ -175,14 +170,23 @@
                       </div>
                       <div class="lines l2" style="display: flex">
                         <p style="color: rgb(48, 40, 98)">......</p>
-                        <p class="tag">&lt;</p>
+                        <!-- <p class="tag">&lt;</p>
                         <p class="tag_name">p</p>
                         <p class="tag">&gt;</p>
                         <p class="code_text">Welcome to My Portfolio</p>
-
+                        
                         <p class="tag">&lt;</p>
                         <p class="tag_name">p</p>
-                        <p class="tag">&gt;</p>
+                        <p class="tag">&gt;</p> -->
+                        <p style="text-align: left; flex-basis: 100%">
+                          <span class="tag">&lt;</span
+                          ><span style="color: rgb(255, 255, 206)">p</span
+                          ><span class="tag"  >&gt;</span><span id = 'typedtext'></span>
+                          <span class="tag"> &lt;</span>/<span
+                            style="color: rgb(255, 255, 206)"
+                            >p</span
+                          ><span class="tag">&gt;</span>
+                        </p>
                       </div>
 
                       <!-- <div class="lines l2" style="display: flex">
@@ -214,23 +218,12 @@
                     </div>
                   </div>
                   <div class="tabs_hidden tags typewriter javascript_dummy">
-                    <div
-                      class="lines l2"
-                      style="display: flex; line-height: 1.6"
-                    >
-                      <p></p>
-                      <p style="color: rgb(254, 254, 178)">console</p>
-                      <p style="color: rgb(206, 217, 255)">.log</p>
-                      ('
-                      <p style="color: rgb(86, 244, 86)">
-                        You can visit projects
+                    <div>
+                      <p style="text-align: left;line-height : 1.5" class="keys">
+                        console.<span class="tag_name" >log</span>( <span style="color :rgb(86, 239, 86)">'You can visit my about page to know more about me'</span> );
                       </p>
                     </div>
-                    <div class="lines l2" style="display: flex">
-                      <p style="color: rgb(86, 244, 86)">
-                        page to see my projects
-                      </p>
-                    </div>
+
                     <!-- <p></p>
                       <p class="tag">&lt;</p>
                       <p class="tag_name">p</p>
@@ -242,21 +235,11 @@
                       <p class="tag">&gt;</p> -->
                   </div>
                   <div class="tabs_hidden tags typewriter python_dummy">
-                    <div class="lines l2" style="display: flex">
-                      <p style="color: rgb(254, 254, 178)">print</p>
-                      ('
-                      <p style="color: rgb(86, 244, 86)">
-                        Check the status bar or
-                      </p>
-                    </div>
-                    <div
-                      class="lines l2"
-                      style="display: flex; text-align: left; line-height: 1.6"
-                    >
-                      <p style="color: rgb(86, 244, 86)">
-                        about page for my social media links)
-                      </p>
-                    </div>
+                    <p style="text-align: left;line-height : 1.5" class="keys">
+                      <span class="tag_name" >print</span>( <span style="color :rgb(86, 239, 86)">'Want to connect with me and develop something awesome? You can contact me through my contact page'</span> );
+                    </p>
+                 
+            
                     <!-- <div class="lines l2" style="display: flex">
                         
                         <p> <p style="color : rgb(86, 244, 86)">media links</p></p>)
@@ -275,37 +258,49 @@
       <!-- ##################################################################### -->
       <!-- ##################################################################### -->
       <!-- ##################################################################### -->
-   
-      <div  class=" about-page-container page-c hidden" data-name="about">
+
+      <div class="about-page-container page-c hidden" data-name="about">
         <div class="about-me-container">
-       
           <div class="my-info a-card">
             <div class="about-header">
-              <h1 class="about-header-text" >I Me & Myself</h1>
+              <h1 class="about-header-text">I Me & Myself</h1>
             </div>
             <div class="about-info">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptatem dignissimos laudantium delectus consectetur dolore numquam doloremque placeat ! Molestias quibusdam molestiae ut facilis ipsum voluptates iusto, tempora sed reprehenderit ullam, obcaecati doloribus incidunt Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae earum natus laborum. At incidunt neque odit esse dolorem eius? </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+                voluptatem dignissimos laudantium delectus consectetur dolore
+                numquam doloremque placeat ! Molestias quibusdam molestiae ut
+                facilis ipsum voluptates iusto, tempora sed reprehenderit ullam,
+                obcaecati doloribus incidunt Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Quo recusandae earum natus
+                laborum. At incidunt neque odit esse dolorem eius?
+              </p>
             </div>
             <button class="info-button btn-primary">Know More</button>
             <div class="hidden-info hidden">
-              <p style="padding-bottom: 20px;" class="about-info "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eos nulla error accusantium, adipisci sed, ab minimaSit praesentium aperiam, repudiandae delectus aliquam qui facilis commodi nobis iure vol lorem20</p>
+              <p style="padding-bottom: 20px" class="about-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus eos nulla error accusantium, adipisci sed, ab minimaSit
+                praesentium aperiam, repudiandae delectus aliquam qui facilis
+                commodi nobis iure vol lorem20
+              </p>
             </div>
             <div class="special-btn special-btn-position">
-            <button class="btn-special ">Blog Page</button>
-            <button class="btn-special">Social Links</button>
-            <button class="btn-special">Resume</button>
+              <button class="btn-special">Blog Page</button>
+              <button class="btn-special">Social Links</button>
+              <button class="btn-special">Resume</button>
+            </div>
           </div>
-             </div>
           <div class="my-stacks a-card">
             <div class="stack-frontend stack-container">
-              <div class="front grad-1">
+              <div class="front grad-1 skills-container ">
                 <!-- <div class="js-logo">Frontend</div> -->
                 <div class="logos">
                   <li>
                     <img
                       width="60"
                       height="60"
-                    src="./img/javascript.svg"
+                      src="./img/javascript.svg"
                       alt=""
                     />
                   </li>
@@ -332,13 +327,12 @@
                       alt=""
                     />
                   </li>
-        
                 </div>
                 <div class="stack-side-bar">
                   <p>Frontend</p>
                 </div>
               </div>
-              <div class="back grad-3">
+              <div class="front grad-3 skills-container">
                 <div class="logos">
                   <li>
                     <img width="60" height="60" src="./img/python.svg" alt="" />
@@ -355,43 +349,24 @@
                     />
                   </li>
                   <li>
-                    <img
-                      src="./img/heroku.svg"
-                      width="60"
-                      height="60"
-                      alt=""
-                    />
+                    <img src="./img/heroku.svg" width="60" height="60" alt="" />
                   </li>
                 </div>
                 <div class="stack-side-bar">
                   <p>Backend</p>
                 </div>
-             
               </div>
-            </div>
-<p style="padding : 10px" ></p>
-            <div class="stack-frontend stack-container">
-              <div class="front">
+              <div class="front skills-container">
                 <!-- <div class="js-logo">Frontend</div> -->
                 <div class="logos">
                   <li>
                     <img src="./img/heroku.svg" width="60" height="60" alt="" />
                   </li>
                   <li>
-                    <img
-                      src="./img/git.svg"
-                      width="60"
-                      height="60"
-                      alt=""
-                    />
+                    <img src="./img/git.svg" width="60" height="60" alt="" />
                   </li>
                   <li>
-                    <img
-                      src="./img/github.svg"
-                      width="60"
-                      height="60"
-                      alt=""
-                    />
+                    <img src="./img/github.svg" width="60" height="60" alt="" />
                   </li>
                   <li>
                     <img
@@ -407,19 +382,35 @@
                   <p>Others</p>
                 </div>
               </div>
-              <div class="back grad-4">
-                <div class="logos">
+              
+              <div class="front grad-4 skills-container ">
+                <div class="logos"> 
                   <li>
-                    <img   src="./img/linkedin.svg" width="60" height="60" alt="" />
+                    <img
+                      src="./img/linkedin.svg"
+                      width="60"
+                      height="60"
+                      alt=""
+                    />
                   </li>
                   <li>
-                    <img   src="./img/github.svg" width="60" height="60" alt="" />
+                    <img src="./img/github.svg" width="60" height="60" alt="" />
                   </li>
                   <li>
-                    <img   src="./img/instagram.svg" width="60" height="60" alt="" />
+                    <img
+                      src="./img/instagram.svg"
+                      width="60"
+                      height="60"
+                      alt=""
+                    />
                   </li>
                   <li>
-                    <img   src="./img/twitter.svg" width="60" height="60" alt="" />
+                    <img
+                      src="./img/twitter.svg"
+                      width="60"
+                      height="60"
+                      alt=""
+                    />
                   </li>
                 </div>
                 <div class="stack-side-bar">
@@ -428,40 +419,66 @@
                 <!-- <div class="py-logo">Backend</div> -->
               </div>
             </div>
-            <!-- <div class="stack-tools stack-container">
-              <div style="background : rgba(98, 83, 81, 0.387) ;" class="other-stack-side-bar">
-                <p>Others</p>
-              
-              </div>
-            
-            </div> -->
-          </div>
-       
+            </div>
+            <!-- <p style="padding: 10px"></p>
+            <div class="stack-frontend stack-container">
+
+     
+          </div> -->
         </div>
       </div>
 
       <div class="projects-page-container page-c hidden" data-name="project">
         <div class="projects-container">
-          <h1>This is projects page</h1>
+          <h3>Projects That I am Proud of </h3>
+          <div class="project-cards">
+          
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+          </div>
+          <h3>Python Projects</h3>
+          <div class="project-cards">
+          
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+          </div>
+          <h3>FrontEnd Projects</h3>
+          <div class="project-cards">
+          
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+          </div>
         </div>
       </div>
 
-      <div class="contacts-page-container page-c" data-name="contact">
+      <div class="contacts-page-container page-c hidden" data-name="contact">
         <div class="contacts-container">
           <div class="contact-me">
             <div class="image-form">
               <div class="image-container">
                 <div class="img">
                   <div class="img-cont">
-                    <img width="300"  height="300" src="./img/mobile.gif" alt="" />
+                    <img
+                      width="300"
+                      height="300"
+                      src="./img/mobile.gif"
+                      alt=""
+                    />
                   </div>
-              <!-- <div><p>Other Links</p></div> -->
+                  <!-- <div><p>Other Links</p></div> -->
                   <div class="social">
-                    <li class="contact-social-links"><img src="./img/instagram.svg" alt=""></li>
-                    <li class="contact-social-links"><img src="./img/github.svg" alt=""></li>
-                    <li class="contact-social-links"><img src="./img/linkedin.svg" alt=""></li>
-                    <li class="contact-social-links"><img src="./img/twitter.svg" alt=""></li>
-               
+                    <li class="contact-social-links">
+                      <img src="./img/instagram.svg" alt="" />
+                    </li>
+                    <li class="contact-social-links">
+                      <img src="./img/github.svg" alt="" />
+                    </li>
+                    <li class="contact-social-links">
+                      <img src="./img/linkedin.svg" alt="" />
+                    </li>
+                    <li class="contact-social-links">
+                      <img src="./img/twitter.svg" alt="" />
+                    </li>
                   </div>
                 </div>
               </div>
@@ -474,7 +491,8 @@
                     required
                   />
                   <input type="email" placeholder="Your Email" required />
-                  <textarea style="resize: none;"
+                  <textarea
+                    style="resize: none"
                     name="text"
                     id="ta"
                     cols="20"
