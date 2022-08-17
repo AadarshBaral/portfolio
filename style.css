@@ -26,6 +26,23 @@
 
 
 }
+#overlay {
+position: fixed; /* Sit on top of the page content */
+ display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.488); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  animation: fadeIn .3s;
+}
+.modal-hidden {
+    display :none !important;
+}
 
 .ov-container {
     max-width: 1100px;
@@ -1034,7 +1051,7 @@ height: 100%;
     top: 175px;
     width: 1100px;
     margin: auto;
-    border: 3px solid pink;
+    display :flex;
     height: 200vh;
 }
 .project-cards{
@@ -1046,14 +1063,187 @@ height: 100%;
 .project-card {
     width : 300px;
     height : 200px;
-    background: gray;
+    background: rgb(57, 57, 57);
     margin-right: 10px;
 }
 
+.project-box {
+    width : 300px;
+    height : 300px;
+    /* border: 1px solid pink; */
+    margin : 20px;
+    position: relative;
+
+}
+.proj-box {
+    width: 100%;
+    height : 100%;
+    background-color: rgb(87, 117, 83);
+    border-radius: 10px;
+    
+}
+.proj-img-container {
+ 
+    background-image: url('https://img.freepik.com/premium-vector/illustration-sad-person-with-messy-head_650525-5.jpg?w=740');
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height : 80%;
+    border-radius: 10px 10px 0 0;
+    border : 2px solid rgb(255, 217, 0);
+
+  
+}
+.proj-img-container img {
+    max-width: 100%; height: auto;
+    
+}
+.shadow-box {
+    background : var(--primary-button-accent);
+    transition: .3s ease-in-out
+}
+.main-box{
+    position: absolute;
+    bottom : 10px;
+    left :10px;
+    background : #2b2b2b;
+    transition:all 0.3s;
+}
+#svg {
+    fill : #2b2b2b;
+}
+.main-box:hover  {
+    bottom : 20px;
+    left :20px;
+}
+
+.proj-info-container {
+    position:relative;
+}
+
+.proj-info-container .svg-cont {
+     
+    position: absolute;
+    top: -81px;
+    border-radius: 10px;    
+        
+}
+.proj-card-info {
+    position:relative;
+    height : 50px;
+    z-index: 1;
+    display : flex;
+
+    align-items: center;
+
+}
+.tag-button {
+    font-size: 13px;
+    /* background : rgb(186, 255, 174); */
+    border :2px solid var(--primary-button-accent);
+    background : none;
+    border-radius: 10px;
+    padding : 8px;
+    color : white;
+    margin-left: 7px;
+}
+.hall-of-fame{
+    display :grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.modal-container {
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 
 
+    background : pink;
+    
+    height : 400px; 
+    width :700px;
+    display : flex;
+    flex-direction: row;
+    border-radius: 15px;
+    background: 
+    -webkit-linear-gradient(rgb(213, 14, 14), rgba(135, 60, 255, 0.0) 0%),
+   -webkit-linear-gradient(-120deg, rgb(33, 33, 33) 45%, rgb(111, 111, 111) 0%);
+   animation: fadeIn .3s;
 
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 
+.modal-img {
+    background-image: url('https://img.freepik.com/free-vector/vector-illustration-isolated-planet-earth-space-with-moon-stars_1284-48308.jpg?w=740&t=st=1660742368~exp=1660742968~hmac=b9cf55ded7839f00616dd803658748bd97df5cfeb291011b5920f55e97b5ae86');
+    background-repeat: no-repeat;
+    object-fit:cover;
+    background-position: center;
+border-radius: 10px 0 0 10px;
+    height : 100%;
+    width :50%;
+    
+
+}
+.cross > p {
+    font-size: 25px;
+}
+.cross svg {
+    stroke : white;
+    transform: rotate(45deg);
+}
+.cross  {
+    display :flex;
+    justify-content: space-between;
+}
+.modal-info {
+    flex : 1;
+    margin :15px;
+    display :flex;
+
+}
+.technologies-used {
+    display :flex;
+
+}
+.technologies-used >* {
+    margin : 5px;
+    font-size: 13px;
+    border : 2px solid orange;
+    border-radius: 10px;
+    padding : 4px;
+    cursor:default
+}
+.modal-header > p {
+    color : rgb(255, 255, 255);
+    font-size: 25px;
+    font-weight: 400;
+}
+.modal-project-info  {
+    margin-top : 10px;
+    height : 60%;
+    overflow-y: scroll;
+    background : rgba(45, 45, 45, 0.388);
+    padding : 10px;
+    font-size: 14px;
+    scrollbar-color: rgb(56, 56, 56) var(--primary-button-accent);
+  scrollbar-width: thin;
+  border-radius: 10px;
+}
+.modal-btn {
+ background : var(--primary-button-accent);
+ border : none;
+ padding : 10px;
+ margin-top: 10px;
+ border-radius: 10px;
+ width : 50%;
+ cursor:pointer;
+ color : black;
+ font-size: 18px;
+}
 /* Contacts */
 /* Contacts */
 /* Contacts */
