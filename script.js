@@ -263,4 +263,34 @@ const projectModalPopup = document.querySelectorAll(".project-box");
 projectModalPopup.forEach(function (elem) {
   elem.addEventListener("click", modalOpen);
 });
-overlay.addEventListener('click',modalCloser)
+overlay.addEventListener("click", modalCloser);
+
+//SLider
+// const leftArrow = document.querySelector(".slide-left");
+// const rightArrow = document.querySelector(".slide-right");
+// const slider = document.querySelector('.slider')
+// const sliderNodes = slider.children
+// console.log(sliderNodes)
+
+// let curSlide = 0
+// let pos = 0
+// const slides = document.querySelectorAll(".slide");
+// // slides.forEach((s, i) => {
+// //   pos = 100 * i;
+// //   s.style.transform = `translateX(${pos}%)`;
+// //   if (pos !== 0) {
+// //     s.style.display = "none";
+// //   }
+// // });
+// //next slide
+// curSlide = 0;
+// rightArrow.addEventListener('click',function(){
+
+// for ( let i = 0 ; i< sliderNodes.length ; i++){
+//   sliderNodes[i].style.display = 'none'
+// }
+
+
+
+// })
+// //

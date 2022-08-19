@@ -26,10 +26,11 @@
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script
+    <script defer
       src="https://kit.fontawesome.com/f515549239.js"
       crossorigin="anonymous"
     ></script>
+    <script defer src="./slide-stories.js"></script>
   </head>
   <body>
     
@@ -549,8 +550,29 @@
       </div>
     </div>
     <div id="overlay"></div> 
-    <div class="modal-container modal-hidden">
-      <div class="modal-img"></div>
+    <!-- Add modal hidden later -->
+    <div class="modal-container modal-hidden ">
+
+      <div class="modal-img">
+
+ 
+        <div class="css-script-clear"></div>
+        <div data-slide="slide" class="slide">
+          <div class="slide-items">
+            <img src="./img/01.jpg" alt="Img 1">
+            <img src="./img/02.jpg" alt="Img 2">
+            <img src="./img/03.jpg" alt="Img 3">
+            <img src="./img/02.jpg" alt="Img 4">
+          </div>
+          <nav class="slide-nav">
+            <div class="slide-thumb"></div>
+            <div class="btns">
+            <button class="slide-prev">Prev</button>
+            <button class="slide-next">Next</button>
+          </div>
+          </nav>
+        </div>
+      </div>
       <div class="modal-info">
           <div class="modal-header">
               <div class="cross">

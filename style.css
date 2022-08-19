@@ -1161,8 +1161,8 @@ height: 100%;
 
     background : pink;
     
-    height : 400px; 
-    width :700px;
+    height : 550px; 
+    width :75%;
     display : flex;
     flex-direction: row;
     border-radius: 15px;
@@ -1178,16 +1178,133 @@ height: 100%;
   }
 
 .modal-img {
-    background-image: url('https://img.freepik.com/free-vector/vector-illustration-isolated-planet-earth-space-with-moon-stars_1284-48308.jpg?w=740&t=st=1660742368~exp=1660742968~hmac=b9cf55ded7839f00616dd803658748bd97df5cfeb291011b5920f55e97b5ae86');
+
     background-repeat: no-repeat;
     object-fit:cover;
     background-position: center;
 border-radius: 10px 0 0 10px;
     height : 100%;
     width :50%;
+    position: relative;
     
 
 }
+.slider {
+    /* position:absolute; */
+    display: grid;
+}
+.slide {
+    inset: 0;
+    position:  absolute;
+    height : 80%;
+
+}
+.slide img {
+    height: 100%;
+    width :100%;
+    object-fit: cover;
+    background-position: center;
+   
+}   
+.slide-components{
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width : 100%;
+    height : 100%;
+   z-index: 15;
+   position:relative
+}
+.slide-right ,.slide-left {
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.504);
+   
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 10px;
+    margin : 10px;
+}
+.slide-items {
+    position: relative;
+    grid-area: 1/1;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 125%;
+  }
+  
+  .slide-nav {
+    grid-area: 1/1;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  
+  .btns {
+    display:flex;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    justify-content: space-around;
+    height: 125%;
+  }
+  .slide-nav button {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    /* position:absolute; */
+    width: 100%;
+    height: 100%;
+
+  }
+
+  
+  .slide-items > * {
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .slide-items > .active {
+    position: relative;
+    opacity: 1;
+    pointer-events: initial;
+  }
+  
+  .slide-thumb {
+    display: flex;
+    grid-column: 1 / 3;
+  }
+  
+  .slide-thumb > span {
+    flex: 1;
+    display: block;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.4);
+    margin: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    
+  }
+  
+  .slide-thumb > span.active::after {
+    content: '';
+    display: block;
+    height: inherit;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    transform: translateX(-100%);
+    animation: thumb 5s forwards linear;
+  }
+  
+  @keyframes thumb {
+    to {
+      transform: initial;
+    }
+  }
+  
 .cross > p {
     font-size: 25px;
 }
@@ -1224,7 +1341,7 @@ border-radius: 10px 0 0 10px;
 }
 .modal-project-info  {
     margin-top : 10px;
-    height : 60%;
+    height :70%;
     overflow-y: scroll;
     background : rgba(45, 45, 45, 0.388);
     padding : 10px;
