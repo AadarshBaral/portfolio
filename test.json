@@ -1,0 +1,39 @@
+{
+  "about_page": {
+    "description": "Hi Iam aadarsh",
+    "image": "url_for_image"
+  },
+  "project_page": {
+    "hall_of_fame": [
+      { 
+        "it1": {
+          "name": "CollegeChamps",
+          "image": "Image Link Here",
+          "description": "This is the description of CollegeChamps"
+        },
+        "it2": {
+          "name": "CollegeChamps",
+          "image": "Image Link Here",
+          "description": "This is the description of CollegeChamps"
+        }
+      }
+    ],
+    "photoshop_projects" :[
+        "link1","link2","link3","link3"
+    ],
+    "full_stack_projects" : [
+        {
+            "it1": {
+                "name": "CollegeChamps",
+                "image": "Image Link Here",
+                "description": "This is the description of CollegeChamps"
+              },
+              "it2": {
+                "name": "CollegeChamps",
+                "image": "Image Link Here",
+                "description": "This is the description of CollegeChamps"
+              }
+        }
+    ]
+  }
+}

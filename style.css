@@ -26,6 +26,8 @@
 
 
 }
+
+
 #overlay {
 position: fixed; /* Sit on top of the page content */
  display: none; /* Hidden by default */
@@ -35,10 +37,11 @@ position: fixed; /* Sit on top of the page content */
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.488); /* Black background with opacity */
+  background-color: rgba(0, 0, 0, 0.619); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
   animation: fadeIn .3s;
+  backdrop-filter: blur(6px);
 }
 .modal-hidden {
     display :none !important;
@@ -282,17 +285,7 @@ body {
     }
 }
 
-@media (max-width : 578px) {
-    .btn-primary {
-        font-size: 15px;
-        margin-right: 5px;
-        padding: 7px
-    }
 
-    .nav-items {
-        margin-left: 40px;
-    }
-}
 
 /* ide window part */
 .ide-container {
@@ -400,12 +393,12 @@ body {
 
 @media (max-width:520px) {
     .ide-container {
-        width: 350px;
+        width: 400px;
         height: 250px;
     }
 
     .playground {
-        font-size: 13px;
+        font-size: 15px;
         line-height: 1.55;
     }
 
@@ -418,16 +411,16 @@ body {
     }
 
     .side-tab .side-tab-name {
-        font-size: 12px;
+        font-size: 14px;
         margin-left: 2px;
     }
 
     .side-tab i {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .playground .numbering p {
-        font-size: 13px;
+        font-size: 15px;
         line-height: 1.55;
     }
 
@@ -437,8 +430,8 @@ body {
     }
 
     .dot {
-        width: 12px;
-        height: 12px;
+        width: 13px;
+        height: 13px;
     }
 
     .typewriter {
@@ -741,7 +734,7 @@ body {
     margin: auto;
     padding-top: 100px;
     padding: 100px 20px 0px 20px;
-    overflow-x: hidden;
+
 
 }
 
@@ -755,7 +748,7 @@ overflow: auto;
     width: 721px;
     /* text-align: center; */
     border-radius: 10px;
-    overflow-y: auto;
+ 
 }
 
 .about-header-text {
@@ -1046,13 +1039,25 @@ height: 100%;
 /* projects page  */
 
 
+.project-heading {
+    text-align: center;
+font-size: 30px;
+font-weight: 400;
+margin-bottom: 30px;
+
+border-bottom: 1px solid var(--primary-button-accent);
+display: inline-block;
+padding-bottom: 20px;
+}
+
 .projects-container {
     position: absolute;
     top: 175px;
-    width: 1100px;
+    width: 100%;
     margin: auto;
     display :flex;
     height: 200vh;
+    flex-direction: column;
 }
 .project-cards{
     display : flex;
@@ -1068,7 +1073,7 @@ height: 100%;
 }
 
 .project-box {
-    width : 300px;
+    width : 85%;
     height : 300px;
     /* border: 1px solid pink; */
     margin : 20px;
@@ -1084,7 +1089,7 @@ height: 100%;
 }
 .proj-img-container {
  
-    background-image: url('https://img.freepik.com/premium-vector/illustration-sad-person-with-messy-head_650525-5.jpg?w=740');
+    
     background-position: center;
     background-repeat: no-repeat;
     object-fit: cover;
@@ -1094,8 +1099,16 @@ height: 100%;
 
   
 }
+
+.normal-projects {
+    border: 2px solid white;
+}
 .proj-img-container img {
-    max-width: 100%; height: auto;
+    height: 100%;
+    background-position: center;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
     
 }
 .shadow-box {
@@ -1150,25 +1163,26 @@ height: 100%;
 .hall-of-fame{
     display :grid;
     grid-template-columns: 1fr 1fr 1fr;
+    width : 100%;
+    margin: 0 20px 0 0;
+    margin-bottom: 30px
 }
 .modal-container {
     z-index: 10;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
 
 
-    background : pink;
     
     height : 550px; 
     width :75%;
     display : flex;
     flex-direction: row;
     border-radius: 15px;
-    background: 
-    -webkit-linear-gradient(rgb(213, 14, 14), rgba(135, 60, 255, 0.0) 0%),
-   -webkit-linear-gradient(-120deg, rgb(33, 33, 33) 45%, rgb(111, 111, 111) 0%);
+    background: rgb(31, 31, 31);
+   
    animation: fadeIn .3s;
 
 }
@@ -1505,11 +1519,7 @@ border-radius: 10px 0 0 10px;
     border: none;
 }
 
-@media (max-width : 768px) {
-    .a-card {
-        margin: 0px
-    }
-}
+
 
 /* media queries */
 @media (max-width : 1080px) {
@@ -1548,9 +1558,53 @@ border-radius: 10px 0 0 10px;
     .logos li {
         padding: 8px
     }
-
+    .modal-container{
+        height : 425px; 
+        width : 745px;
+    }
+    .modal-project-info{
+        height: 60%;
+    }
 }
-
+@media (max-width : 768px) {
+    .a-card {
+        margin: 0px
+    }
+ 
+    .hall-of-fame {
+        grid-template-columns : 1fr 1fr;
+    }
+    .modal-container {
+        width : 90%;
+        display:block;
+       
+        height: 70%;
+    }
+    .modal-info {
+        margin : 10px;
+        
+    }
+    .modal-img {
+        width: 100%;
+        height: 45%;
+    }
+    .cross {
+        align-items: center;
+    }
+    .cross > p {
+        font-size: 18px;
+    }
+    .modal-project-info {
+        height : 34%;
+    }
+    .projects-container {
+        top: 20px;
+    }
+    .nav-items{
+        margin-left : 75px;
+    }
+   
+}
 @media (max-width : 835px) {
     .logos {
         grid-template-columns: repeat(3, 1fr);
@@ -1653,5 +1707,72 @@ border-radius: 10px 0 0 10px;
 
     .skills-container {
         height: 29%;
+    }
+    .hall-of-fame {
+        display : flex;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .project-box {
+        width : 75%;
+            
+    
+    }
+}@media (max-width:400px){
+    .ide-container {
+        width: 350px;
+        height: 250px;
+    }
+.nav-items{
+    margin-left:0px;
+}
+    .playground {
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+
+
+    .side-tab {
+        padding: 2px
+    }
+
+    .side-tab .side-tab-name {
+        font-size: 12px;
+      
+    }
+
+
+
+    .playground .numbering p {
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .tab-name,
+    .fa-html5 {
+        font-size: 8px;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+
+    .typewriter {
+        text-align: center;
+    }
+
+}
+@media (max-width : 578px) {
+    .btn-primary {
+        font-size: 15px;
+        margin-right: 5px;
+        padding: 7px
+    }
+
+    .nav-items {
+        margin-left: 50px;
     }
 }

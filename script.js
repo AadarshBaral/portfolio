@@ -25,6 +25,114 @@ const ide_tab_3 = document.querySelector(".btn3");
 const html_dummy = document.querySelector(".html_dummy");
 const javascript_dummy = document.querySelector(".javascript_dummy");
 const python_dummy = document.querySelector(".python_dummy");
+const aboutContent = document.querySelector(".about-me")
+
+// Api calls
+document.addEventListener('DOMContentLoaded',function(){
+  const client = contentful.createClient({
+    // This is the space ID. A space is like a project folder in Contentful terms
+    space: "9z18mcgf183d",
+    // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+    accessToken: "oYkDAKZPpYetUJvkSvlPvJMU9l0TOGBPnoic8ifx8D8",
+  });
+
+
+
+const getAboutMe = async function () {
+  try {
+    let hall = await client.getEntries({
+      content_type: "portfolio",
+    });
+    //  console.log(hall)
+    
+     const aboutme   = Object.entries(hall)
+      const dt = aboutme[4][1][0]["fields"]["portfolio"]
+      const [about,...d] = Object.entries(dt)
+      const [a,photoshop,c] = Object.entries(d[0][1])
+      const hallOfFame = a[1][0]
+      const fullStackProjects = c[1][0]
+      console.log(about)
+      
+      if (localStorage.getItem('about'))
+      {
+        aboutContent.innerText = localStorage.getItem('about')
+      }else{
+        localStorage.setItem('about',about[1]['description'])
+      }
+      
+     
+  } catch {
+    console.log("error");
+  }
+};
+getAboutMe();
+
+},false)
+///
+// Image carousel
+class SlideStories {
+  constructor(id) {
+    this.slide = document.querySelector(`[data-slide="${id}"]`);
+    this.active = 0;
+    this.init();
+  }
+
+  activeSlide(index) {
+    this.active = index;
+    this.items.forEach((item) => item.classList.remove("active"));
+    this.items[index].classList.add("active");
+    this.thumbItems.forEach((item) => item.classList.remove("active"));
+    this.thumbItems[index].classList.add("active");
+    this.autoSlide();
+  }
+
+  prev() {
+    if (this.active > 0) {
+      this.activeSlide(this.active - 1);
+    } else {
+      this.activeSlide(this.items.length - 1);
+    }
+  }
+
+  next() {
+    if (this.active < this.items.length - 1) {
+      this.activeSlide(this.active + 1);
+    } else {
+      this.activeSlide(0);
+    }
+  }
+
+  addNavigation() {
+    const nextBtn = this.slide.querySelector(".slide-next");
+    const prevBtn = this.slide.querySelector(".slide-prev");
+    nextBtn.addEventListener("click", this.next);
+    prevBtn.addEventListener("click", this.prev);
+  }
+
+  addThumbItems() {
+    this.items.forEach(() => (this.thumb.innerHTML += `<span></span>`));
+    this.thumbItems = Array.from(this.thumb.children);
+  }
+
+  autoSlide() {
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(this.next, 5000);
+  }
+
+  init() {
+    this.next = this.next.bind(this);
+    this.prev = this.prev.bind(this);
+    this.items = this.slide.querySelectorAll(".slide-items > *");
+    this.thumb = this.slide.querySelector(".slide-thumb");
+    this.addThumbItems();
+    this.activeSlide(0);
+    this.addNavigation();
+  }
+}
+
+new SlideStories("slide");
+
+///
 
 // Ide settings
 // Ide settings
@@ -289,8 +397,6 @@ overlay.addEventListener("click", modalCloser);
 // for ( let i = 0 ; i< sliderNodes.length ; i++){
 //   sliderNodes[i].style.display = 'none'
 // }
-
-
 
 // })
 // //

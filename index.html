@@ -26,14 +26,17 @@
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script defer
-      src="https://kit.fontawesome.com/f515549239.js"
-      crossorigin="anonymous"
-    ></script>
-    <script defer src="./slide-stories.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+  <script defer src="script.js"></script>
+  <script  defer
+    src="https://kit.fontawesome.com/f515549239.js"
+    crossorigin="anonymous"
+  ></script>
+
+
   </head>
   <body>
-    
+
     <div class="ov-container">
       <div class="nav-bar">
         <div class="menu-bar">
@@ -268,7 +271,7 @@
               <h1 class="about-header-text">I Me & Myself</h1>
             </div>
             <div class="about-info">
-              <p>
+              <p class = 'about-me'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
                 voluptatem dignissimos laudantium delectus consectetur dolore
                 numquam doloremque placeat ! Molestias quibusdam molestiae ut
@@ -432,17 +435,17 @@
 
       <div class="projects-page-container page-c hidden" data-name="project">
         <div class="projects-container">
+          <h1 class="project-heading">Hall of Fame</h1>
          <div class="hall-of-fame">
+         
           <div class="project-box">
             <div class=" proj-box"></div>
             <div class="main-box proj-box">
                 <div class="proj-img-container">
+                  <img src="./img/cc.png" alt="">
                 </div>
                 <div class="proj-info-container">
-                    <div class="svg-cont">
-                    <svg width="100%" height="200%" id="svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,600 C 0,600 0,300 0,300 C 111.3397129186603,338.26794258373207 222.6794258373206,376.53588516746413 323,362 C 423.3205741626794,347.46411483253587 512.622009569378,280.12440191387566 608,263 C 703.377990430622,245.87559808612437 804.8325358851675,278.9665071770335 897,281 C 989.1674641148325,283.0334928229665 1072.047846889952,254.00956937799043 1161,252 C 1249.952153110048,249.99043062200957 1344.976076555024,274.9952153110048 1440,300 C 1440,300 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
-                    </svg >
-                    </div>
+           
                    <div class="proj-card-info">
                     <button class="tag-button">Full-Stack</button>
                    </div>
@@ -469,6 +472,59 @@
             <div class=" proj-box"></div>
             <div class="main-box proj-box">
                 <div class="proj-img-container">
+             
+                </div>
+                <div class="proj-info-container">
+                    <div class="svg-cont">
+                    <svg width="100%" height="200%" id="svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,600 C 0,600 0,300 0,300 C 111.3397129186603,338.26794258373207 222.6794258373206,376.53588516746413 323,362 C 423.3205741626794,347.46411483253587 512.622009569378,280.12440191387566 608,263 C 703.377990430622,245.87559808612437 804.8325358851675,278.9665071770335 897,281 C 989.1674641148325,283.0334928229665 1072.047846889952,254.00956937799043 1161,252 C 1249.952153110048,249.99043062200957 1344.976076555024,274.9952153110048 1440,300 C 1440,300 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+                    </svg >
+                    </div>
+                   <div class="proj-card-info">
+                    <button class="tag-button">Full-Stack</button>
+                   </div>
+                </div>
+            </div>
+        </div>
+       
+      </div>
+      <h1 class="project-heading">Backend Projects</h1>
+         <div class=" hall-of-fame">
+          <div class="project-box">
+            <div class=" proj-box"></div>
+            <div class="main-box proj-box">
+                <div class="normal-projects proj-img-container">
+                </div>
+                <div class="proj-info-container">
+                    <div class="svg-cont">
+                    <svg width="100%" height="200%" id="svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,600 C 0,600 0,300 0,300 C 111.3397129186603,338.26794258373207 222.6794258373206,376.53588516746413 323,362 C 423.3205741626794,347.46411483253587 512.622009569378,280.12440191387566 608,263 C 703.377990430622,245.87559808612437 804.8325358851675,278.9665071770335 897,281 C 989.1674641148325,283.0334928229665 1072.047846889952,254.00956937799043 1161,252 C 1249.952153110048,249.99043062200957 1344.976076555024,274.9952153110048 1440,300 C 1440,300 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+                    </svg >
+                    </div>
+                   <div class="proj-card-info">
+                    <button class="tag-button">Full-Stack</button>
+                   </div>
+                </div>
+            </div>
+        </div>
+          <div class="project-box">
+            <div class=" proj-box"></div>
+            <div class="main-box proj-box">
+                <div class="normal-projects proj-img-container">
+                </div>
+                <div class="proj-info-container">
+                    <div class="svg-cont">
+                    <svg width="100%" height="200%" id="svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,600 C 0,600 0,300 0,300 C 111.3397129186603,338.26794258373207 222.6794258373206,376.53588516746413 323,362 C 423.3205741626794,347.46411483253587 512.622009569378,280.12440191387566 608,263 C 703.377990430622,245.87559808612437 804.8325358851675,278.9665071770335 897,281 C 989.1674641148325,283.0334928229665 1072.047846889952,254.00956937799043 1161,252 C 1249.952153110048,249.99043062200957 1344.976076555024,274.9952153110048 1440,300 C 1440,300 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+                    </svg >
+                    </div>
+                   <div class="proj-card-info">
+                    <button class="tag-button">Full-Stack</button>
+                   </div>
+                </div>
+            </div>
+        </div>
+          <div class="project-box">
+            <div class=" proj-box"></div>
+            <div class="main-box proj-box">
+                <div class="normal-projects proj-img-container">
                 </div>
                 <div class="proj-info-container">
                     <div class="svg-cont">
@@ -559,7 +615,7 @@
         <div class="css-script-clear"></div>
         <div data-slide="slide" class="slide">
           <div class="slide-items">
-            <img src="./img/01.jpg" alt="Img 1">
+            <img src="./img/cc.png" alt="Img 1">
             <img src="./img/02.jpg" alt="Img 2">
             <img src="./img/03.jpg" alt="Img 3">
             <img src="./img/02.jpg" alt="Img 4">
@@ -594,5 +650,6 @@
       </div>
      </div>
   </body>
-  <script src="script.js"></script>
+
+
 </html>
