@@ -25,50 +25,132 @@ const ide_tab_3 = document.querySelector(".btn3");
 const html_dummy = document.querySelector(".html_dummy");
 const javascript_dummy = document.querySelector(".javascript_dummy");
 const python_dummy = document.querySelector(".python_dummy");
-const aboutContent = document.querySelector(".about-me")
-
+const aboutContent = document.querySelector(".about-me");
+const projSection = document.querySelector(".each-proj-section");
+// projSection.insertAdjacentHTML("beforebegin",'<h1>Hi</h1>')
 // Api calls
-document.addEventListener('DOMContentLoaded',function(){
-  const client = contentful.createClient({
-    // This is the space ID. A space is like a project folder in Contentful terms
-    space: "9z18mcgf183d",
-    // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-    accessToken: "oYkDAKZPpYetUJvkSvlPvJMU9l0TOGBPnoic8ifx8D8",
-  });
+
+// console.log(proj_list)
+// console.log(hallOfFame)
+// const aboutLoader = function(){
+//   proj_list.forEach(function (elem, ind, arr) {
+//     console.log('hi')
+//     projSection.insertAdjacentHTML('beforeend',`<div class="proj-sec">
+//     <h1 class="project-heading">Hall of Fame</h1>
+//     <div class="hall-of-fame">
+
+//     <div class="project-box">
+//       <div class=" proj-box"></div>
+//       <div class="main-box proj-box">
+//           <div class="proj-img-container">
+//             <img src="./img/cc.png" alt="">
+//           </div>
+//           <div class="proj-info-container">
+
+//             <div class="proj-card-info">
+//               <button class="tag-button">Full-Stack</button>
+//             </div>
+//           </div>
+//       </div>
+//     </div>
+
+//     </div>
+//     </div>
+//     `)
+
+//   });
+// }
 
 
+// console.log(hallContainer);
 
-const getAboutMe = async function () {
-  try {
-    let hall = await client.getEntries({
-      content_type: "portfolio",
-    });
-    //  console.log(hall)
+// const load = function () {
+//   const client = contentful.createClient({
+//     // This is the space ID. A space is like a project folder in Contentful terms
+//     space: "9z18mcgf183d",
+//     // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+//     accessToken: "oYkDAKZPpYetUJvkSvlPvJMU9l0TOGBPnoic8ifx8D8",
+//   });
+
+//   const getAboutMe = async function () {
+//     try {
+//       let hall = await client.getEntries({
+//         content_type: "portfolio",
+//       });
+//       //  console.log(hall)
+
+//       const aboutme = Object.entries(hall);
+//       const dt = aboutme[4][1][0]["fields"]["portfolio"];
+
+//       const proj_list = Object.entries(dt["project_page"]);
+//       // console.log(proj_list)
+//       const [about, ...d] = Object.entries(dt);
+//       //   const [a, photoshop, c] = Object.entries(d[0][1]);
+//       aboutContent.innerText = about[1]["description"];
+
+//       const hallOfFame = proj_list[0];
+//       const fullStackProjects = hallOfFame[1];
+//       // console.log(hallOfFame);
+//       // console.log(hallOfFame[1][0])
+//       const returnBoxes = function () {
+//       let val = ``;
+//      let boxItems=   Object.entries(hallOfFame[1][0]).map(function(boxElem) {
+//           boxElem[1]['image']
+//           val  =`<div class="project-box">
+//           <div id = 'proj-box' name="hi" class="proj-box"></div>
+//           <div class="main-box proj-box">
+//             <div class="proj-img-container">
+//               <img class = 'trigger-image' src=${boxElem[1]['image']} alt="" />
+//             </div>
+//             <div class="proj-info-container">
+//               <div class="proj-card-info">
+//                 <button id = 'mod' class="tag-button">Full-Stack</button>
+//               </div>
+//             </div>
+//           </div>
+//         </div>`
+        
+//          return val
+//         });
+//         const boxElementCombined = boxItems.join(" ")
+//         console.log(boxElementCombined)
+//         return boxElementCombined
+//       };
     
-     const aboutme   = Object.entries(hall)
-      const dt = aboutme[4][1][0]["fields"]["portfolio"]
-      const [about,...d] = Object.entries(dt)
-      const [a,photoshop,c] = Object.entries(d[0][1])
-      const hallOfFame = a[1][0]
-      const fullStackProjects = c[1][0]
-      console.log(about)
-      
-      if (localStorage.getItem('about'))
-      {
-        aboutContent.innerText = localStorage.getItem('about')
-      }else{
-        localStorage.setItem('about',about[1]['description'])
-      }
-      
-     
-  } catch {
-    console.log("error");
-  }
-};
-getAboutMe();
+// returnBoxes()
+//       proj_list.forEach(function (elem, ind, arr) {
+//         const title =
+//           elem[0][0].toUpperCase() + elem[0].slice(1).replaceAll("_", " ");
 
-},false)
+//         // console.log(elem[1][0]);
+
+//         // returnBoxes()
+//         projSection.insertAdjacentHTML(
+//           "beforebegin",
+//           `<div class="proj-sec">
+//                   <h1 class="project-heading">${title}</h1>
+//                   <div class="hall-of-fame">
+   
+//                   </div>
+//                   </div>
+//               `
+//         );
+//       });
+//       // hallContainer.forEach(function (hallElem) {
+//       //   hallElem.insertAdjacentHTML("beforebegin", "<h1>hi</h1>");
+//       // });
+//     } catch (err) {
+//       console.log(err.name);
+//     }
+//   };
+
+//   getAboutMe();
+// };
 ///
+// load();
+const hallContainer = document.querySelectorAll(".hall-of-fame");
+// console.log(hallContainer)
+
 // Image carousel
 class SlideStories {
   constructor(id) {
@@ -131,6 +213,8 @@ class SlideStories {
 }
 
 new SlideStories("slide");
+new SlideStories("slide2");
+new SlideStories("slide3");
 
 ///
 
@@ -285,12 +369,12 @@ document.getElementsByTagName("body")[0].style.overflow = "auto";
 //     console.log('kk')
 //   })
 // });
-const hiddenInfo = document.querySelector(".hidden-info");
-const infoButton = document.querySelector(".info-button");
+// const hiddenInfo = document.querySelector(".hidden-info");
+// const infoButton = document.querySelector(".info-button");
 
-infoButton.addEventListener("click", () =>
-  hiddenInfo.classList.toggle("hidden")
-);
+// infoButton.addEventListener("click", () =>
+//   hiddenInfo.classList.toggle("hidden")
+// );
 
 // set up text to print, each item in array is new line
 
@@ -352,25 +436,51 @@ hoverBox.forEach((elem) => {
   });
 });
 //Modal window
-const modalWindow = document.querySelector(".modal-container");
+let  modalBtns = document.querySelectorAll(".proj-img-container") 
+const modalWindow = document.querySelectorAll(".modal-container");
 const overlay = document.querySelector("#overlay");
-const modalClose = document.querySelector(".close-modal");
+const modalClose = document.querySelectorAll(".close-modal");
+console.log(modalClose)
+modalBtns.forEach(function(btn){
+  btn.addEventListener('click',function(){
+    let modal = btn.getAttribute("data-modal");
+    document.getElementById(modal).classList.remove('modal-hidden')
+    overlay.style.display = 'block'
+  })
+})
 
-const modalOpen = function () {
-  modalWindow.classList.remove("modal-hidden");
-  document.getElementById("overlay").style.display = "block";
-};
+// const projectModalPopup = document.querySelectorAll(".projects-container");
+// // console.log(projectModalPopup);
+// const modalWindow = document.querySelector(".modal-container");
+// const overlay = document.querySelector("#overlay");
+
+
+// const modalOpen = function () {
+//   modalWindow.classList.remove("modal-hidden");
+//   document.getElementById("overlay").style.display = "block";
+  
+// };
 
 const modalCloser = function () {
-  modalWindow.classList.add("modal-hidden");
+  modalWindow.forEach(function(mod){
+    mod.classList.add('modal-hidden')
+  })
   document.getElementById("overlay").style.display = "none";
 };
-modalClose.addEventListener("click", modalCloser);
+modalClose.forEach(function(closebtn){
+  closebtn.addEventListener('click',modalCloser)
+})
 
-const projectModalPopup = document.querySelectorAll(".project-box");
-projectModalPopup.forEach(function (elem) {
-  elem.addEventListener("click", modalOpen);
-});
+// projectModalPopup.forEach(function (e) {
+//   console.log(e);
+//   e.addEventListener("click", function (elem) {
+//     if (elem.target.tagName === "IMG") {
+//       modalOpen();
+//       console.log("click");
+//     }
+//     console.log(elem.target.tagName);
+//   });
+// });
 overlay.addEventListener("click", modalCloser);
 
 //SLider
