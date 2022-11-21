@@ -232,16 +232,14 @@ body {
     border: 2px solid var(--primary-button-accent);
     padding: 8px;
     border-radius: 10px;
-
+    margin-bottom: 10px;
     cursor: pointer;
     font-size: 15px;
 
 }
 
 .special-btn-position {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
+    margin-left : 20px;
 
 }
 
@@ -263,8 +261,28 @@ body {
 
 }
 
+.skill-set {
+    display :flex;
+    flex-direction: row;
+    margin-left: 20px;
+    flex-wrap: wrap;
+}
+.skill-set li img {
+    height : 40px;
+    width : 40px;
+}
+.skill-set li {
+    margin : 5px;
+    background : rgb(52, 52, 52);
+    border-radius: 5px;
+    padding : 5px;
+}
 
 @media (max-width : 1080px) {
+
+    .about-me-container {
+        flex-direction:column;
+    }
 
     .landing-grid-container {
         -webkit-box-orient: vertical;
@@ -726,10 +744,11 @@ body {
     display: flex;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
+    /* justify-content: space-between; */
+    /* -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    align-items: center; */
+  
     height: 100vh;
     margin: auto;
     padding-top: 100px;
@@ -744,11 +763,12 @@ overflow: auto;
 .my-info {
     position: relative;
     background: rgb(32, 32, 36);
-    height: 80%;
-    width: 721px;
+    height:  auto;
+width: 100%;
     /* text-align: center; */
     border-radius: 10px;
- 
+ margin-top: 50px;
+ margin-bottom: 50px;
 }
 
 .about-header-text {
@@ -765,10 +785,38 @@ overflow: auto;
     margin: 20px;
 }
 
-.a-card {
+/* .a-card {
     margin: 10px
+} */
+
+.skills-container {
+    position:relative;
+    border-radius: 20px;
 }
 
+.logo-container {
+
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    background-color: #434343;
+    padding: 10px;
+    height:80%;
+    margin-top: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+.logo-container li {
+    list-style: none;
+    /* display:flex;
+    justify-content: center;
+    align-items: center; */
+    /* background : rgb(44, 44, 44); */
+    border-radius: 10px;
+    margin : 10px;
+    padding :10px;
+   align-items: center;
+    border: 1px solid black;
+}
 .my-stacks {
 
     height: 80%;
@@ -1528,27 +1576,22 @@ border-radius: 10px 0 0 10px;
 
 /* media queries */
 @media (max-width : 1080px) {
-    .about-me-container {
+    /* .about-me-container {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
         padding: 175px 0px 20px;
         height: 120vh
-    }
+    } */
 
-    .my-info {
-        width: auto;
-        /* height : auto; */
-    }
-
-    .my-stacks {
+    /* .my-stacks {
         width: 90%;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row;
-    }
+    } */
 
     .logos {
         /* grid-template-columns: repeat(4 ,1fr); */
@@ -1570,12 +1613,12 @@ border-radius: 10px 0 0 10px;
     .modal-project-info{
         height: 60%;
     }
+    .my-info {
+        margin-top: 20px;
+    }
 }
 @media (max-width : 768px) {
-    .a-card {
-        margin: 0px
-    }
- 
+
     .hall-of-fame {
         grid-template-columns : 1fr 1fr;
     }
@@ -1616,11 +1659,6 @@ border-radius: 10px 0 0 10px;
 
     }
 
-    .my-info {
-        width: 95%;
-
-    }
-
     .my-stacks {
         width: 95%;
     }
@@ -1657,9 +1695,9 @@ border-radius: 10px 0 0 10px;
         display: block
     }
 
-    .about-me-container {
+    /* .about-me-container {
         padding-top: 60px;
-    }
+    } */
 }
 
 @media (max-width : 500px) {
@@ -1668,9 +1706,9 @@ border-radius: 10px 0 0 10px;
 
     }
 
-    .about-me-container {
+    /* .about-me-container {
         display: block;
-    }
+    } */
 
     .logos img {
         width: 60px;
@@ -1710,9 +1748,7 @@ border-radius: 10px 0 0 10px;
         height: 90vh
     }
 
-    .skills-container {
-        height: 29%;
-    }
+   
     .hall-of-fame {
         display : flex;
         align-items: center;
