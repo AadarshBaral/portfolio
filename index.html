@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Aadarsh Baral</title>
+
     <link rel="stylesheet" href="style.css" />
     <!-- googlefont -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,19 +27,38 @@
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap"
       rel="stylesheet"
     />
-  
-    <script defer src="script.js"></script>
-    <script
-      defer
-      src="https://kit.fontawesome.com/f515549239.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <script>
+      /*to prevent Firefox FOUC, this must be here*/
+      let FF_FOUC_FIX;
+    </script>
   </head>
   <body>
+    <!-- loader -->
+    <div id="loading">
+      <img id="loading-image" src="./img/spinner.gif" alt="Loading..." />
+    </div>
+
+    <!-- spinner -->
+    <!-- spinner -->
     <div class="ov-container">
       <div class="nav-bar">
         <div class="menu-bar">
-          <i style="font-size: 30px ;margin:10px" class="fa-solid fa-xl fa-bars"></i>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </div>
         <ul class="nav-items hidden">
           <!-- <span class="icon"><i class="fa-solid faicon fa-house"></i></span> -->
@@ -96,26 +116,77 @@
                 <br />
                 <p class="explorer">Explorer</p>
                 <div class="side-tab">
-                  <i
-                    class="fa-brands fa-ic fa-lg fa-html5"
-                    style="color: orange"
-                  ></i>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="HTML5"
+                    role="img"
+                    viewBox="0 0 22.888 22.888"
+                    width="25"
+                    height="25"
+                  >
+                    <path
+                      fill="#e34f26"
+                      d="M3.174 20.563L1.341 0h20.162l-1.833 20.563 -8.27 2.324"
+                    />
+                    <path
+                      fill="#ef652a"
+                      d="M11.444 21.1l6.661 -1.833 1.564 -17.613H11.444"
+                    />
+                    <path
+                      fill="#ebebeb"
+                      d="M11.444 9.298h-3.353l-0.224 -2.593h3.577V4.202H5.096l0.671 7.644h5.677zm-0.045 6.571l-2.817 -0.76 -0.179 -2.012h-2.504l0.313 3.979 5.186 1.43z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M11.399 9.298v2.548h3.129l-0.313 3.264 -2.817 0.76v2.637l5.186 -1.43 0.715 -7.778zm0 -5.096v2.504h6.124l0.224 -2.504z"
+                    />
+                  </svg>
                   <p class="side-tab-name btn1">index.html</p>
                 </div>
 
                 <div class="side-tab">
-                  <i
-                    class="fa-brands fa-ic fa-lg fa-js"
-                    style="color: rgb(225, 255, 0)"
-                  ></i>
+                  <svg
+                    width="20px"
+                    height="20px"
+                    viewBox="0 0 256 256"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    preserveAspectRatio="xMidYMid"
+                  >
+                    <g>
+                      <path
+                        d="M0,0 L256,0 L256,256 L0,256 L0,0 Z"
+                        fill="#F7DF1E"
+                      ></path>
+                      <path
+                        d="M67.311746,213.932292 L86.902654,202.076241 C90.6821079,208.777346 94.1202286,214.447137 102.367086,214.447137 C110.272203,214.447137 115.256076,211.354819 115.256076,199.326883 L115.256076,117.528787 L139.313575,117.528787 L139.313575,199.666997 C139.313575,224.58433 124.707759,235.925943 103.3984,235.925943 C84.1532952,235.925943 72.9819429,225.958603 67.3113397,213.93026"
+                        fill="#000000"
+                      ></path>
+                      <path
+                        d="M152.380952,211.354413 L171.969422,200.0128 C177.125994,208.433981 183.827911,214.619835 195.684368,214.619835 C205.652521,214.619835 212.009041,209.635962 212.009041,202.762159 C212.009041,194.513676 205.479416,191.592025 194.481168,186.78207 L188.468419,184.202565 C171.111213,176.81473 159.597308,167.53534 159.597308,147.944838 C159.597308,129.901308 173.344508,116.153295 194.825752,116.153295 C210.119924,116.153295 221.117765,121.48094 229.021663,135.400432 L210.29059,147.428775 C206.166146,140.040127 201.699556,137.119289 194.826159,137.119289 C187.78047,137.119289 183.312254,141.587098 183.312254,147.428775 C183.312254,154.646349 187.78047,157.568406 198.089956,162.036622 L204.103924,164.614095 C224.553448,173.378641 236.067352,182.313448 236.067352,202.418387 C236.067352,224.071924 219.055137,235.927975 196.200432,235.927975 C173.860978,235.927975 159.425829,225.274311 152.381359,211.354413"
+                        fill="#000000"
+                      ></path>
+                    </g>
+                  </svg>
                   <p class="side-tab-name btn2">script.js</p>
                 </div>
 
                 <div class="side-tab">
-                  <i
-                    class="fa-brands fa-ic fa-lg fa-python"
-                    style="color: rgb(68, 171, 255)"
-                  ></i>
+                  <svg
+                    width="25px"
+                    height="25px"
+                    viewBox="0 0 1024 1024"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="512" cy="512" r="512" style="fill: #3776ab" />
+                    <path
+                      transform="translate(428.423 184.256)"
+                      d="M81.7 73.2c-129.9 0-121.8 56.3-121.8 56.3l.1 58.4H84v17.5H-89.2s-83.1-9.4-83.1 121.7 72.6 126.4 72.6 126.4h43.3v-60.8s-2.3-72.6 71.4-72.6h123s69.1 1.1 69.1-66.8V141.1s10.4-67.9-125.4-67.9zm-68.3 39.3c12.3 0 22.3 10 22.3 22.3s-10 22.3-22.3 22.3-22.3-10-22.3-22.3 9.9-22.3 22.3-22.3zm72 469.8c129.9 0 121.8-56.3 121.8-56.3l-.1-58.4h-124v-17.5h173.2s83.1 9.4 83.1-121.7S266.8 202 266.8 202h-43.3v60.8s2.3 72.6-71.4 72.6h-123S-40 334.3-40 402.2v112.2s-10.3 67.9 125.4 67.9zm68.4-39.3c-12.3 0-22.3-10-22.3-22.3s10-22.3 22.3-22.3 22.3 10 22.3 22.3c0 12.4-10 22.3-22.3 22.3z"
+                      style="fill: #fff"
+                    />
+                  </svg>
+
                   <p class="side-tab-name btn3">test.py</p>
                 </div>
               </div>
@@ -299,9 +370,10 @@
                 knowledge of Photoshop. My main focus these days is building
                 fully responsive, scaleable and clean web applications. Today at
                 this time, I can work with HTML and CSS, Flask, Django,
-                Tailwind, Bootstrap, Javascript and I am also familiar with GIT and GITHUB
+                Tailwind, Bootstrap, Javascript and I am also familiar with GIT
+                and GITHUB
               </p>
-           
+
               <h1 class="about-header-text">Skills Set</h1>
               <div class="skill-set">
                 <li>
@@ -311,19 +383,39 @@
                   <img src="./img/css3.svg" width="60" height="60" alt="" />
                 </li>
                 <li>
-                  <img src="./img/javascript.svg" width="60" height="60" alt="" />
+                  <img
+                    src="./img/javascript.svg"
+                    width="60"
+                    height="60"
+                    alt=""
+                  />
                 </li>
                 <li>
                   <img src="./img/python.svg" width="60" height="60" alt="" />
                 </li>
                 <li>
-                  <img src="./img/djangoproject.svg" width="60" height="60" alt="" />
+                  <img
+                    src="./img/djangoproject.svg"
+                    width="60"
+                    height="60"
+                    alt=""
+                  />
                 </li>
                 <li>
-                  <img  src="./img/tailwind-css.svg" width="60" height="60" alt="" />
+                  <img
+                    src="./img/tailwind-css.svg"
+                    width="60"
+                    height="60"
+                    alt=""
+                  />
                 </li>
                 <li>
-                  <img src="./img/bootstrap.svg" width="60" height="60" alt="" />
+                  <img
+                    src="./img/bootstrap.svg"
+                    width="60"
+                    height="60"
+                    alt=""
+                  />
                 </li>
                 <li>
                   <img src="./img/git.svg" width="60" height="60" alt="" />
@@ -335,24 +427,31 @@
                   <img src="./img/flask.svg" width="60" height="60" alt="" />
                 </li>
                 <li>
-                  <img src="./img/adobe-photoshop.svg" width="60" height="60" alt="" />
+                  <img
+                    src="./img/adobe-photoshop.svg"
+                    width="60"
+                    height="60"
+                    alt=""
+                  />
                 </li>
                 <li>
                   <img src="./img/heroku.svg" width="60" height="60" alt="" />
-     
-       
+                </li>
               </div>
-              <br>
+
+              <br />
             </div>
-    
+
             <div class="special-btn special-btn-position">
-           
-              <a target="_blank" href="https://drive.google.com/file/d/1aYJY7jrZwVekg5H7hAVJTebd0bTSRyJB/view?usp=sharing">
-              <button class="btn-special">Resume</button>
-            </a>
+              <a
+                target="_blank"
+                href="https://drive.google.com/file/d/12dskqHc7-tZ7DfiZ6uGuojOfu-F8TGOK/view?usp=sharing"
+              >
+                <button class="btn-special">Resume</button>
+              </a>
             </div>
           </div>
-<!-- 
+          <!-- 
           <div class="skills-container">
            <div class="logo-container">
             <li>
@@ -520,9 +619,6 @@
               </div>
             </div>
           </div> -->
-
-          
-
         </div>
       </div>
 
@@ -541,8 +637,18 @@
                     <div class="proj-info-container">
                       <div class="proj-card-info">
                         <button id="mod" class="tag-button">Full-Stack</button>
-                        <a href="http://collegechamps.herokuapp.com/" target="_blank">
-                        <button style="background:rgb(57, 71, 57);cursor:pointer;" id="mod" class="tag-button">Visit Site</button></a>
+                        <a
+                          href="http://collegechamps.herokuapp.com/"
+                          target="_blank"
+                        >
+                          <button
+                            style="background: rgb(57, 71, 57); cursor: pointer"
+                            id="mod"
+                            class="tag-button"
+                          >
+                            Visit Site
+                          </button></a
+                        >
                       </div>
                     </div>
                   </div>
@@ -674,26 +780,35 @@
                   </div>
                   <!-- <div><p>Other Links</p></div> -->
                   <div class="social">
-                    <a target="_blank" href="https://www.facebook.com/adarsh.baral.03">
-                    <li class="contact-social-links">
-                      <img src="./img/facebook.svg" alt="" />
-                    </li>
-                  </a>
-                  <a target="_blank" href="https://github.com/AadarshBaral">
-                    <li class="contact-social-links">
-                      <img src="./img/github.svg" alt="" />
-                    </li>
-                  </a>
-                  <a target="_blank" href="https://www.linkedin.com/in/adarsh-baral-9983a9222/">
-                    <li class="contact-social-links">
-                      <img src="./img/linkedin.svg" alt="" />
-                    </li>
-                  </a>
-                  <a target="_blank" href="https://www.instagram.com/a_dash_baral/">
-                    <li class="contact-social-links">
-                      <img src="./img/instagram.svg" alt="" />
-                    </li>
-                  </a>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/adarsh.baral.03"
+                    >
+                      <li class="contact-social-links">
+                        <img src="./img/facebook.svg" alt="" />
+                      </li>
+                    </a>
+                    <a target="_blank" href="https://github.com/AadarshBaral">
+                      <li class="contact-social-links">
+                        <img src="./img/github.svg" alt="" />
+                      </li>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/adarsh-baral-9983a9222/"
+                    >
+                      <li class="contact-social-links">
+                        <img src="./img/linkedin.svg" alt="" />
+                      </li>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://www.instagram.com/a_dash_baral/"
+                    >
+                      <li class="contact-social-links">
+                        <img src="./img/instagram.svg" alt="" />
+                      </li>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -830,7 +945,7 @@
           <div data-slide="slide2" class="slide">
             <div class="slide-items">
               <img src="./img/laicos_1.png" alt="Img 1" />
-              <img src="./img/laicos_2.png" alt="Img 2" />
+              <!-- <img src="./img/laicos_2.png" alt="Img 2" /> -->
               <img src="./img/laicos_3.png" alt="Img 3" />
               <img src="./img/laicos_4.png" alt="Img 4" />
             </div>
@@ -879,9 +994,12 @@
                 Javascript.
               </p>
             </div>
-            <a href="https://github.com/AadarshBaral/laicos-social_site" target="_blank">
-            <button class="modal-btn">Visit Respo</button>
-          </a>
+            <a
+              href="https://github.com/AadarshBaral/laicos-social_site"
+              target="_blank"
+            >
+              <button class="modal-btn">Visit Respo</button>
+            </a>
           </div>
         </div>
       </div>
@@ -896,7 +1014,7 @@
               <img src="./img/aedash_2.png" alt="Img 2" />
 
               <img src="./img/aedash_1.png" alt="Img 3" />
-              <img src="./img/aedash_4.png" alt="Img 4" />
+              <img src="./img/aedash_3.png" alt="Img 4" />
             </div>
             <nav class="slide-nav">
               <div class="slide-thumb"></div>
@@ -953,4 +1071,7 @@
       </div>
     </div>
   </body>
+  <script>0</script>
+  <script  src="script.js"></script>
+
 </html>
