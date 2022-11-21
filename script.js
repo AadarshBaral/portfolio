@@ -1,7 +1,6 @@
 "use strict";
 
 
-window.onload = function(){ document.getElementById("loading").style.display = "none" }
 
 let menu = document.querySelector(".menu-bar");
 let navigation = document.querySelector(".nav-items");
